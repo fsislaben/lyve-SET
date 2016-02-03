@@ -49,6 +49,8 @@ scripts/run_assembly_isFastqPE.pl
 scripts/run_assembly_removeDuplicateReads.pl
 scripts/run_assembly_shuffleReads.pl
 scripts/run_assembly_trimClean.pl
+scripts/run_assembly_metrics.pl
+scripts/run_assembly_readMetrics.pl
 scripts/samtools
 scripts/simqual
 scripts/simread
@@ -62,4 +64,6 @@ scripts/trunkreads
 scripts/vcf-sort
 scripts/vcfutils.pl
 scripts/wgsim
-
+scripts/stampy.py 
+scripts/vcffilter 
+scripts/vcffixup
