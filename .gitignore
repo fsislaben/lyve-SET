@@ -19,6 +19,11 @@ lib/varscan.v2.3.7.jar
 lib/snpEff.jar
 lib/vcftools_0.1.12b/
 lib/lib
+lib/stampy/
+lib/vcflib/
+lib/vcftools-0.1.14/
+lib/datasets/
+
 
 scripts/basqcol
 scripts/bcftools
