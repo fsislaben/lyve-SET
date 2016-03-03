@@ -25,10 +25,13 @@ In the case where you want to generate all the pileups on one node using SNAP us
 In the case where you have all pileups finished and want to call SNPs on a single node.  This example uses 24 cpus.  At the end of this example, you'll still need to sort the VCF files (`vcf-sort`), compress them with `bgzip`, and index them with `tabix`.
 
     # Call SNPs into vcf file
-    ls bam/*.sorted.bam | xargs -n 1 -I {} basename {} .sorted.bam | xargs -P 24 -n 1 -I {} sh -c "/home/lkatz/bin/Lyve-SET/scripts/launch_varscan.pl bam/{}.sorted.bam --tempdir tmp --reference reference/2010EL-1786.fasta --altfreq 0.75 --coverage 10 > vcf/{}.vcf"
-    # sort/compress/index
-    cd vcf; 
-    ls *.vcf| xargs -I {} -P 24 -n 1 sh -c "vcf-sort < {} > {}.tmp && mv -v {}.tmp {} && bgzip {} && tabix {}.gz"
+    ls -S bam/*.sorted.bam | xargs -P 24 -n 1 sh -c '
+      b=$(basename $0 .sorted.bam); 
+      echo "VARSCAN $b"; 
+      launch_varscan.pl $0 --tempdir tmp --reference reference/reference.fasta --altfreq 0.75 --coverage 4 > vcf/$b.vcf 2>/dev/null; 
+      bgzip vcf/$b.vcf;
+      tabix vcf/$b.vcf.gz
+    '
 
 Other manual steps in Lyve-SET
 -------------------------------------------------
