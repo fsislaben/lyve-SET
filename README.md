@@ -7,6 +7,9 @@ NML, part of PHAC, has the original version of SET (https://github.com/apetkau).
 
 Installation
 ------------
+
+Please check out the releases in GitHub for the latest stable version.  The cutting edge code under the master branch might be unstable.
+
 * `make install`
 * `make help` - for other `make` options
 * See [INSTALL.md](docs/INSTALL.md) for more information including prerequisite software
