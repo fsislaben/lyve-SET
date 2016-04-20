@@ -1,6 +1,8 @@
 Installation
 ============
 
+**NOTE** The latest stable version is v1.1.4e
+
 Quickie Installation
 --------------------
 
