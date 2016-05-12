@@ -69,7 +69,7 @@ After everything is said and done, you might want to look for certain things lik
 
 Here is a quick way to make a histogram, rounding to the nearest 10 thousand.  The three columns printed out are: count, contig, pos.  This table can be view in Excel, etc.
 
-    tail -n +2 out.filteredMatrix.tsv |\ 
+    tail -n +2 out.filteredMatrix.tsv |\
     perl -lane 'print join("\t",$F[0],int($F[1]/10000)*100000)' |\
     sort -k1,1 -k2,2n |\
     uniq -c |\
