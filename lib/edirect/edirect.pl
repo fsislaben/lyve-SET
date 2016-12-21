@@ -91,7 +91,7 @@ $version = "2.30";
 
 # URL address components
 
-$base = "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/";
+$base = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/";
 
 $efetch   = "efetch.fcgi";
 $einfo    = "einfo.fcgi";
@@ -303,9 +303,9 @@ sub adjust_base {
 
     if ( $web ne "" and $web =~ /NCID_\d+_\d+_(\d+)\.\d+\.\d+\.\d+_\d+_\d+_\d+/ ) {
       if ( $1 == "130" ) {
-        $base = "http://eutils.be-md.ncbi.nlm.nih.gov/entrez/eutils/";
+        $base = "https://eutils.be-md.ncbi.nlm.nih.gov/entrez/eutils/";
       } elsif ( $1 == "165" ) {
-        $base = "http://eutils.st-va.ncbi.nlm.nih.gov/entrez/eutils/";
+        $base = "https://eutils.st-va.ncbi.nlm.nih.gov/entrez/eutils/";
       }
     }
     return;
